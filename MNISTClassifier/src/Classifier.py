@@ -39,8 +39,8 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
 #Training loop
 for _ in range(1000):
-  batch = mnist.train.next_batch(100)
-  train_step.run(feed_dict={x: batch[0], y_: batch[1]})
+    batch = mnist.train.next_batch(100)
+    train_step.run(feed_dict={x: batch[0], y_: batch[1]})
   
 #Model evaluation
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
